@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 11.875" name="EsemkaSchoolDataClasses">
+  <DataContextMoniker Name="/EsemkaSchoolDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c81a14ce-3dcd-42ea-a425-1b892854441a" absoluteBounds="3.5, 8, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/Major" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af05e595-ed5d-45d2-bdbe-e536d32ead00" absoluteBounds="3.515, 8.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a018a50-65f4-4aec-8b85-e8bec5da3dc2" absoluteBounds="3.5, 3.625, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7b230de-59b4-4472-98ed-4e8788d74344" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70c9b693-3109-442d-9769-a0b9746039fa" absoluteBounds="6.25, 6.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/RequiredDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c38628b-fb01-4d69-927a-665f936b0ac2" absoluteBounds="6.265, 7.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8b5730f-d458-46ee-a12f-7ad17b945f18" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e2bf5ce-6935-49d4-b163-f1cb9a5beb2e" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86c7d0fa-1fe3-4a0c-a37a-62155222483c" absoluteBounds="6.25, 3.125, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6c0ebf4-fdbc-4c92-81c1-521568269271" absoluteBounds="6.265, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="618f5261-21d3-4a9e-8325-7738af643a7a" absoluteBounds="9, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/StudentTestScheduleSelection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="453c469d-f461-4b2d-8c39-b86ffe1754f7" absoluteBounds="9.015, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="663f4261-f48f-4b63-9e08-de72d0727ec4" absoluteBounds="6.25, 9.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/TestSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3aba1b3-f510-4c63-adbf-1ff11635b455" absoluteBounds="6.265, 10.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1600199f-d696-48b2-aa77-cee9170541ca" absoluteBounds="9, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EsemkaSchoolDataClassesDataContext/UploadedDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1770d285-f6a8-47a6-8f18-0f0bb8337dea" absoluteBounds="9.015, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/Role/Role_User" />
+      <nodes>
+        <classShapeMoniker Id="e8b5730f-d458-46ee-a12f-7ad17b945f18" />
+        <classShapeMoniker Id="4a018a50-65f4-4aec-8b85-e8bec5da3dc2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8); (5.875 : 7.625); (5.875 : 4.58735270182292); (6.25 : 4.58735270182292)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/Major/Major_Student" />
+      <nodes>
+        <classShapeMoniker Id="c81a14ce-3dcd-42ea-a425-1b892854441a" />
+        <classShapeMoniker Id="86c7d0fa-1fe3-4a0c-a37a-62155222483c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.15027547200521); (5.79166666666667 : 5.15027547200521 : JumpStart); (5.95833333333333 : 5.15027547200521 : JumpEnd); (6.25 : 5.15027547200521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/User/User_Student" />
+      <nodes>
+        <classShapeMoniker Id="4a018a50-65f4-4aec-8b85-e8bec5da3dc2" />
+        <classShapeMoniker Id="86c7d0fa-1fe3-4a0c-a37a-62155222483c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.69314697265625); (8.54166666666667 : 4.69314697265625 : JumpStart); (8.70833333333333 : 4.69314697265625 : JumpEnd); (9 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/Student/Student_StudentTestScheduleSelection" />
+      <nodes>
+        <classShapeMoniker Id="86c7d0fa-1fe3-4a0c-a37a-62155222483c" />
+        <classShapeMoniker Id="618f5261-21d3-4a9e-8325-7738af643a7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.6065991210937); (10 : 10.6065991210937); (10 : 5.3862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/TestSchedule/TestSchedule_StudentTestScheduleSelection" />
+      <nodes>
+        <classShapeMoniker Id="663f4261-f48f-4b63-9e08-de72d0727ec4" />
+        <classShapeMoniker Id="618f5261-21d3-4a9e-8325-7738af643a7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 6.87591745577925); (8.625 : 6.50091745577925); (8.625 : 1.63544840494792); (9 : 1.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/RequiredDocument/RequiredDocument_UploadedDocument" />
+      <nodes>
+        <classShapeMoniker Id="70c9b693-3109-442d-9769-a0b9746039fa" />
+        <classShapeMoniker Id="1600199f-d696-48b2-aa77-cee9170541ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 3.125); (7.25 : 2.10942510742187); (8.54166666666667 : 2.10942510742187 : JumpStart); (8.70833333333333 : 2.10942510742187 : JumpEnd); (9 : 2.10942510742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EsemkaSchoolDataClassesDataContext/Student/Student_UploadedDocument" />
+      <nodes>
+        <classShapeMoniker Id="86c7d0fa-1fe3-4a0c-a37a-62155222483c" />
+        <classShapeMoniker Id="1600199f-d696-48b2-aa77-cee9170541ca" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EsemkaSchool" Class="EsemkaSchoolDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=EsemkaSchool;Integrated Security=True" SettingsObjectName="EsemkaSchool.Properties.Settings" SettingsPropertyName="EsemkaSchoolConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Major" Member="Majors">
+    <Type Name="Major">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Major_Student" Member="Students" ThisKey="Id" OtherKey="MajorId" Type="Student" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NoHandphone" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Student" Member="Students" ThisKey="Id" OtherKey="UserId" Type="Student" />
+      <Association Name="Role_User" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RequiredDocument" Member="RequiredDocuments">
+    <Type Name="RequiredDocument">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="RequiredDocument_UploadedDocument" Member="UploadedDocuments" ThisKey="Id" OtherKey="RequiredDocumentId" Type="UploadedDocument" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User" Member="Users" ThisKey="Id" OtherKey="RoleId" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MajorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PlaceOfBirth" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FatherName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FatherNoHandphone" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MotherNoHandphone" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Student_StudentTestScheduleSelection" Member="StudentTestScheduleSelections" ThisKey="Id" OtherKey="StudentId" Type="StudentTestScheduleSelection" />
+      <Association Name="Student_UploadedDocument" Member="UploadedDocuments" ThisKey="Id" OtherKey="StudentId" Type="UploadedDocument" />
+      <Association Name="Major_Student" Member="Major" ThisKey="MajorId" OtherKey="Id" Type="Major" IsForeignKey="true" />
+      <Association Name="User_Student" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentTestScheduleSelection" Member="StudentTestScheduleSelections">
+    <Type Name="StudentTestScheduleSelection">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestScheduleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Student_StudentTestScheduleSelection" Member="Student" ThisKey="StudentId" OtherKey="Id" Type="Student" IsForeignKey="true" />
+      <Association Name="TestSchedule_StudentTestScheduleSelection" Member="TestSchedule" ThisKey="TestScheduleId" OtherKey="Id" Type="TestSchedule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestSchedule" Member="TestSchedules">
+    <Type Name="TestSchedule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="TestSchedule_StudentTestScheduleSelection" Member="StudentTestScheduleSelections" ThisKey="Id" OtherKey="TestScheduleId" Type="StudentTestScheduleSelection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UploadedDocument" Member="UploadedDocuments">
+    <Type Name="UploadedDocument">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequiredDocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FilePath" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ApprovalStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="RequiredDocument_UploadedDocument" Member="RequiredDocument" ThisKey="RequiredDocumentId" OtherKey="Id" Type="RequiredDocument" IsForeignKey="true" />
+      <Association Name="Student_UploadedDocument" Member="Student" ThisKey="StudentId" OtherKey="Id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

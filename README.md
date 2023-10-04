@@ -1,0 +1,2 @@
+# EsemkaSchool
+unfinished LKS project
